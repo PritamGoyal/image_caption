@@ -10,11 +10,21 @@ from pickle import load
 import io
 
 # Load the tokenizer and trained model
-from keras.preprocessing.text import tokenizer_from_json
 import json
+from tensorflow.keras.preprocessing.text import Tokenizer  # safe import in tf-nightly
 
-with open("tokenizer.json", "r") as f:
-    tokenizer = tokenizer_from_json(json.load(f))
+def load_tokenizer_from_json(path):
+    with open(path, 'r') as f:
+        tokenizer_data = json.load(f)
+    tokenizer = Tokenizer()
+    tokenizer.word_counts = tokenizer_data['word_counts']
+    tokenizer.word_docs = tokenizer_data['word_docs']
+    tokenizer.word_index = tokenizer_data['word_index']
+    tokenizer.index_word = tokenizer_data['index_word']
+    tokenizer.num_words = tokenizer_data.get('num_words')
+    return tokenizer
+
+tokenizer = load_tokenizer_from_json("tokenizer.json")
 
     
 model = load_model("model_1.h5")
