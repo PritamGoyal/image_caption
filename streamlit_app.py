@@ -10,8 +10,12 @@ from pickle import load
 import io
 
 # Load the tokenizer and trained model
-with open("tokenizer.p", "rb") as f:
-    tokenizer = load(f)
+from keras.preprocessing.text import tokenizer_from_json
+import json
+
+with open("tokenizer.json", "r") as f:
+    tokenizer = tokenizer_from_json(json.load(f))
+
     
 model = load_model("model_1.h5")
 xception_model = Xception(include_top=False, pooling="avg")
