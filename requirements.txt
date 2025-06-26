@@ -2,3 +2,4 @@ streamlit
 tf-nightly
 pillow
 numpy
+keras-nlp
