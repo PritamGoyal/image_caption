@@ -17,15 +17,15 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 def load_tokenizer_from_json(path):
     with open(path, 'r') as f:
         tokenizer_data = json.load(f)
-    
+
     tokenizer = Tokenizer()
-    tokenizer.word_counts = OrderedDict(tokenizer_data['word_counts'])
-    tokenizer.word_docs = tokenizer_data['word_docs']
-    tokenizer.word_index = tokenizer_data['word_index']
-    tokenizer.index_word = {int(k): v for k, v in tokenizer_data['index_word'].items()}
-    tokenizer.num_words = tokenizer_data.get('num_words')
-    
+    tokenizer.word_counts = OrderedDict(tokenizer_data["word_counts"])
+    tokenizer.word_docs = tokenizer_data["word_docs"]
+    tokenizer.word_index = tokenizer_data["word_index"]
+    tokenizer.index_word = {int(k): v for k, v in tokenizer_data["index_word"].items()}
+    tokenizer.num_words = tokenizer_data.get("num_words")
     return tokenizer
+
 
 
 tokenizer = load_tokenizer_from_json("tokenizer.json")
