@@ -1,5 +1,5 @@
 streamlit==1.32.2
-tf-nightly==2.20.0.dev20250623
-keras-nightly
+tf-nightly==2.19.0.dev20250218
+keras-nightly==3.0.0.dev2025021808
 pillow
 h5py
