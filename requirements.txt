@@ -1,5 +1,5 @@
-streamlit
-tf-nightly
+streamlit==1.25.0
+tensorflow==2.10.0
+keras==2.10.0
+h5py
 pillow
-numpy
-keras-nlp
