@@ -1,5 +1,5 @@
 streamlit
-keras
-h5py
+tf-nightly==2.16.0.dev20240130
+keras==3.1.0
 pillow
 numpy
