@@ -1,8 +1,11 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
+
 from keras.models import load_model
-from keras.applications.xception import Xception
+from keras.applications import xception
+Xception = xception.Xception
+
 from keras.preprocessing.sequence import pad_sequences
 from pickle import load
 import io
