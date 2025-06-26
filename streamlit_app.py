@@ -10,7 +10,9 @@ from pickle import load
 import io
 
 # Load the tokenizer and trained model
-tokenizer = load(open("tokenizer.p", "rb"))
+with open("tokenizer.p", "rb") as f:
+    tokenizer = load(f)
+    
 model = load_model("model_1.h5")
 xception_model = Xception(include_top=False, pooling="avg")
 
