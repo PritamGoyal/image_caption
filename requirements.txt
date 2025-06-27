@@ -1,4 +1,4 @@
 streamlit==1.32.2
-tf-nightly==2.20.0.dev20250623
+tensorflow==2.15.0
 numpy
 Pillow
